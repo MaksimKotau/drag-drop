@@ -1,78 +1,78 @@
 body{
-		background-color: #CFD8DC;
-	}
-	header {
-		text-align: center;
-	}
-	#uploadPreview {
-		width: 600px;
-		height: 600px;
-	}
-	#sourceDesImages{
-		margin-top: 12px;
-		width: 624px;
-		height: 624px;
-		float:left;
-		text-align: center;
-		box-sizing: border-box;
-		padding: 2px;
-		background-color: #ECEFF1;
-	}
-	#resultat {
-		margin-top: 12px;
-		width: 624px;
-		height:624px;
-		float: left;
-		text-align: center;
-		box-sizing: border-box;
-		padding: 2px;
-		background-color: #ECEFF1;
-	}
-	.boxes {
-		width: 200px;
-		height: 200px;
-		float:left;
-		background-size: 600px 600px;
-		background-position: 0% 0%;
-	}
-	.result_boxes {
-		width: 200px;
-		height: 200px;
-		float:left;
-	}
-    #division {
-        width: 50px;
-        float: left;
-        height: 600px;
-    }
-	section {
-		display: block;
-		width: auto;
-		overflow: hidden;
-		width: 1298px;
-		margin-left: auto;
-		margin-right: auto;
-		text-align: center;
-	}
-	h1 {
-		color:#607D8B;
-		font-size: 50px;
-	}
-	.buttonSubmit {
-		background-color: #607D8B;
-		border: none;
-		margin-top : 30px;
-		color: white;
-		width : 130px;
-		height : 40px;
-		text-align: center;
-		text-decoration: none;
-		display: inline-block;
-		font-size: 18px;
-		cursor: pointer;
-		box-shadow: 1px 1px 2px 2px #AAA;
-		-moz-border-radius: 2px;
-		-khtml-border-radius: 2px;
-		-webkit-border-radius: 2px;
-		border-radius: 2px;
-	}
+	background-color: #CFD8DC;
+}
+header {
+	text-align: center;
+}
+#uploadPreview {
+	width: 600px;
+	height: 600px;
+}
+#sourceDesImages{
+	margin-top: 12px;
+	width: 624px;
+	height: 624px;
+	float:left;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 2px;
+	background-color: #ECEFF1;
+}
+#resultat {
+	margin-top: 12px;
+	width: 624px;
+	height:624px;
+	float: left;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 2px;
+	background-color: #ECEFF1;
+}
+.boxes {
+	width: 200px;
+	height: 200px;
+	float:left;
+	background-size: 600px 600px;
+	background-position: 0% 0%;
+}
+.result_boxes {
+	width: 200px;
+	height: 200px;
+	float:left;
+}
+#division {
+	width: 50px;
+	float: left;
+	height: 600px;
+}
+section {
+	display: block;
+	width: auto;
+	overflow: hidden;
+	width: 1298px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+h1 {
+	color:#607D8B;
+	font-size: 50px;
+}
+.buttonSubmit {
+	background-color: #607D8B;
+	border: none;
+	margin-top : 30px;
+	color: white;
+	width : 130px;
+	height : 40px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+	cursor: pointer;
+	box-shadow: 1px 1px 2px 2px #AAA;
+	-moz-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
