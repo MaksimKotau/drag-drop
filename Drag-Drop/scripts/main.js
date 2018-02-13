@@ -72,7 +72,7 @@ function Upload() {
 					
 					fillingByBoxes(widthDeBoxes, heightDeBoxes);
                 }; 
-            }
+            };
         } else {
             alert("This browser does not support HTML5.");
             return false;
