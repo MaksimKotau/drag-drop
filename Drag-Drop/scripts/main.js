@@ -1,4 +1,5 @@
 var imageHeight, imageWidth;
+		//Taille de base
 		var widthBase=600;
         var heightBase=600;
 		var imageAddr="";
