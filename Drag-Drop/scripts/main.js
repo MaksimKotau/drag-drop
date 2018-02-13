@@ -1,10 +1,9 @@
 var imageHeight, imageWidth;
-		var widthBase=600;
-        var heightBase=600;
-		var imageAddr="";
-        
-        var massiveDesImages=new Array();
-		var massiveSize=3;
+var widthBase=600;
+var heightBase=600;
+var imageAddr="";
+var massiveDesImages=new Array();
+var massiveSize=3;
 
 //Changes the number of pictures after select.onchange
 function changeSize(){
