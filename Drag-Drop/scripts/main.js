@@ -112,15 +112,8 @@ function fillingByBoxes(widthOfElem, heightOfElem){
 			elem.style.height=heightOfElem+"px";
 			elem.style.backgroundSize=imageWidth+"px "+imageHeight+"px";
 			elem.setAttribute('draggable', 'true');
-			elem.addEventListener("dragstart", function(e) {
-				e.dataTransfer.effecAllowed = 'move';
-				e.dataTransfer.setData("Text", e.target.id);
-				e.target.style.opacity = '0.5'; 
-			});
-			elem.addEventListener("dragend", function(e) {
-				e.target.style.opacity = "1";	
-				e.dataTransfer.clearData("Data");
-			});
+			elem.addEventListener("dragstart", start);
+			elem.addEventListener("dragend", end);
 			if (imageAddr!==""){
 				elem.style.backgroundImage = "url(" + imageAddr + ")"; 
 				backPositionY=100*Math.floor((massiveDesImages[i*massiveSize+j]-1)/massiveSize)/(massiveSize-1);
@@ -131,28 +124,30 @@ function fillingByBoxes(widthOfElem, heightOfElem){
 			parentSource.appendChild(elem);
 			
 			//create element .result_boxes
-			elem=document.createElement('div');
-			elem.id="box_result"+i+j;
-			elem.className="result_boxes";
-			elem.style.width=widthOfElem+"px";
-			elem.style.height=heightOfElem+"px";
-			elem.setAttribute('draggable', 'true');
-			elem.ondragenter = function(e){return true;};
-			elem.ondragover= function(e){
-				if ((e.target.className == "result_boxes") || (e.target.id == "sourceDesImages"))
-					return false;
-				else
-					return true;
-			};
-			elem.ondrop = function(e){
-				e.preventDefault();
-				var element = e.dataTransfer.getData("Text");
-				e.target.appendChild(document.getElementById(element));
-				verifierPuzzle();
-			};
-			parentDestination.appendChild(elem);
+			elem1=document.createElement('div');
+			elem1.id="box_result"+i+j;
+			elem1.className="result_boxes";
+			elem1.style.width=widthOfElem+"px";
+			elem1.style.height=heightOfElem+"px";
+			//elem1.setAttribute('draggable', 'true');
+			elem1.addEventListener("dragenter", enter);
+			elem1.addEventListener ("dragover", over);
+			elem1.addEventListener("drop", drop);
+			parentDestination.appendChild(elem1);
 		}
 	}
+}
+
+
+function start(e) {
+	e.dataTransfer.effectAllowed = 'move';
+	e.dataTransfer.setData("Text", e.target.id);
+	e.target.style.opacity = '0.5';  
+}
+
+function end(e){
+	e.target.style.opacity = "1";	
+	e.dataTransfer.clearData("Text");		
 }
 
 function enter(e) {
@@ -162,10 +157,11 @@ function enter(e) {
 
 function over(e) {
 	if ((e.target.className == "result_boxes") || (e.target.id == "sourceDesImages")){
-		return false;
+		return true;
+		
 	}
 	else{
-		return true;
+		return false;
 	}
 }    
 
@@ -188,7 +184,7 @@ function verifierPuzzle(){
 			}
 		}
 		if (result) {
-			alert("Mes félicitations");
+			alert("Mes fï¿½licitations");
 		} else{
 			alert ("Malheureusement, pas correctement");
 		}
