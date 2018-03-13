@@ -44,6 +44,7 @@ header {
 	width: 50px;
 	float: left;
 	height: 600px;
+	margin-top: 12px;
 }
 section {
 	display: block;

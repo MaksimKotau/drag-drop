@@ -61,15 +61,18 @@ function Upload() {
                         imageWidth=widthBase;
                         imageHeight=heightBase/aspectRatio;
                     }
-					//Change size of containers for saving aspect ratio
-                    document.getElementById("sourceDesImages").style.width=(imageWidth+6)+"px";
-                    document.getElementById("sourceDesImages").style.height=(imageHeight+6)+"px";
-                    document.getElementById("resultat").style.width=(imageWidth+6)+"px";
-                    document.getElementById("resultat").style.height=(imageHeight+6)+"px";
-					document.getElementById("blockCenter").style.width=(imageWidth*2+68)+"px";
-					document.getElementById("division").style.height=(imageHeight+6)+"px";
+                    alert("imageWidth: "+imageWidth+" imageHeight: "+imageHeight);
                     var widthDeBoxes=imageWidth/massiveSize;
                     var heightDeBoxes=imageHeight/massiveSize;
+                    alert("block width: "+widthDeBoxes+" block height: "+heightDeBoxes);
+					//Change size of containers for saving aspect ratio
+                    document.getElementById("sourceDesImages").style.width=(widthDeBoxes*massiveSize+4)+"px";
+                    document.getElementById("sourceDesImages").style.height=(heightDeBoxes*massiveSize+4)+"px";
+                    document.getElementById("resultat").style.width=(widthDeBoxes*massiveSize+4)+"px";
+                    document.getElementById("resultat").style.height=(heightDeBoxes*massiveSize+4)+"px";
+					document.getElementById("blockCenter").style.width=(imageWidth*2+68)+"px";
+					document.getElementById("division").style.height=(imageHeight+4)+"px";
+                    
 					
 					fillingByBoxes(widthDeBoxes, heightDeBoxes);
                 }; 
@@ -83,6 +86,7 @@ function Upload() {
         return false;
     }
 }
+
 //Delete all elements #boxes and #result_boxes from the page
 function removeAllBoxes(){
 	var allSources=document.getElementsByClassName("boxes");
