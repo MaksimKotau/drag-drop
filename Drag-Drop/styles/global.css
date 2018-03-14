@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 28-days;
+    src: url(../fonts/28_Days_Later.ttf);
+}
+
 body{
 	background-color: #C5CAE9;
 }
@@ -59,6 +64,7 @@ section {
 h1 {
 	color:#607D8B;
 	font-size: 50px;
+	font-family: 28-days;
 }
 .buttonSubmit {
 	background-color: #607D8B;
