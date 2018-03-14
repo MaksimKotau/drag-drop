@@ -7,6 +7,12 @@ var imageHeight, imageWidth;
         var massiveDesImages=new Array();
 		var massiveSize=3;
 
+function checkScreenSizes(){
+	var screenWidth=screen.availWidth;
+	var screenHeight=screen.availHeight;
+	//document.getElementById("blockCenter").style.width=;
+}		
+		
 //Changes the number of pictures after select.onchange
 function changeSize(){
 	massiveSize=document.getElementById("selectSize").options[document.getElementById("selectSize").selectedIndex].value;
@@ -65,6 +71,7 @@ function Upload() {
                     var widthDeBoxes=imageWidth/massiveSize;
                     var heightDeBoxes=imageHeight/massiveSize;
                     alert("block width: "+widthDeBoxes+" block height: "+heightDeBoxes);
+                    alert(screen.availHeight+"   "+screen.availWidth);
 					//Change size of containers for saving aspect ratio
                     document.getElementById("sourceDesImages").style.width=(widthDeBoxes*massiveSize+4)+"px";
                     document.getElementById("sourceDesImages").style.height=(heightDeBoxes*massiveSize+4)+"px";

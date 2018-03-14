@@ -1,8 +1,9 @@
 body{
-	background-color: #CFD8DC;
+	background-color: #C5CAE9;
 }
 header {
 	text-align: center;
+	height: 150px;
 }
 #uploadPreview {
 	width: 600px;
@@ -16,7 +17,7 @@ header {
 	text-align: center;
 	box-sizing: border-box;
 	padding: 2px;
-	background-color: #ECEFF1;
+	background-color: #E8EAF6;
 }
 #resultat {
 	margin-top: 12px;
@@ -26,7 +27,7 @@ header {
 	text-align: center;
 	box-sizing: border-box;
 	padding: 2px;
-	background-color: #ECEFF1;
+	background-color: #E8EAF6;
 }
 .boxes {
 	width: 200px;
