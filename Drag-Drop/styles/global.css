@@ -1,14 +1,16 @@
 @font-face {
-    font-family: 28-days;
-    src: url(../fonts/28_Days_Later.ttf);
+    font-family: "Rush";
+    src: url("../fonts/Rush.ttf");
 }
 
 body{
 	background-color: #C5CAE9;
+	padding: 0;
+	margin: 0;
 }
 header {
 	text-align: center;
-	height: 150px;
+	height: 130px;
 }
 #uploadPreview {
 	width: 600px;
@@ -57,14 +59,14 @@ section {
 	width: auto;
 	overflow: hidden;
 	width: 1298px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 	text-align: center;
+	
 }
 h1 {
 	color:#607D8B;
-	font-size: 50px;
-	font-family: 28-days;
+	font-size: 30px;
+	font-family: "Rush";
 }
 .buttonSubmit {
 	background-color: #607D8B;

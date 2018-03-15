@@ -8,9 +8,24 @@ var imageHeight, imageWidth;
 		var massiveSize=3;
 
 function checkScreenSizes(){
+	//var aspect=window.devicePixelRatio;
+	//console.log("aspect "+aspect);
 	var screenWidth=screen.availWidth;
 	var screenHeight=screen.availHeight;
-	//document.getElementById("blockCenter").style.width=;
+	console.log ("ScreenWidth: "+screenWidth+" "+"ScreenHeight: "+screenHeight);
+	
+	var maxHorizontalSize=(screenWidth-50-8)/2;
+	var maxVerticalSize=screenHeight-130-210;
+	console.log("MaxHorizontalSize: "+maxHorizontalSize+" MaxVerticalSize: "+maxVerticalSize);
+	widthBase=maxHorizontalSize;
+	heightBase=maxVerticalSize;
+	document.getElementById("sourceDesImages").style.width=(((widthBase-4)/massiveSize)*massiveSize+4)+"px";
+    document.getElementById("sourceDesImages").style.height=(((heightBase-4)/massiveSize)*massiveSize+4)+"px";
+    document.getElementById("resultat").style.width=(((widthBase-4)/massiveSize)*massiveSize+4)+"px";
+    document.getElementById("resultat").style.height=(((heightBase-4)/massiveSize)*massiveSize+4)+"px";
+	document.getElementById("blockCenter").style.width=(widthBase*2+58)+"px";
+	document.getElementById("division").style.height=(((heightBase-4)/massiveSize)*massiveSize+4)+"px";
+	fillingByBoxes((widthBase-4)/massiveSize, (heightBase-4)/massiveSize);
 }		
 		
 //Changes the number of pictures after select.onchange
@@ -61,26 +76,22 @@ function Upload() {
                     var width = this.width;
                     var aspectRatio=width/height;
                     if (aspectRatio<1){
-                        imageHeight=heightBase;
-                        imageWidth=widthBase*aspectRatio;
+                        imageHeight=heightBase-4;
+                        imageWidth=imageHeight*aspectRatio;
                     } else {
-                        imageWidth=widthBase;
-                        imageHeight=heightBase/aspectRatio;
+                        imageWidth=widthBase-4;
+                        imageHeight=imageWidth/aspectRatio;
                     }
-                    alert("imageWidth: "+imageWidth+" imageHeight: "+imageHeight);
                     var widthDeBoxes=imageWidth/massiveSize;
                     var heightDeBoxes=imageHeight/massiveSize;
-                    alert("block width: "+widthDeBoxes+" block height: "+heightDeBoxes);
-                    alert(screen.availHeight+"   "+screen.availWidth);
 					//Change size of containers for saving aspect ratio
                     document.getElementById("sourceDesImages").style.width=(widthDeBoxes*massiveSize+4)+"px";
                     document.getElementById("sourceDesImages").style.height=(heightDeBoxes*massiveSize+4)+"px";
                     document.getElementById("resultat").style.width=(widthDeBoxes*massiveSize+4)+"px";
                     document.getElementById("resultat").style.height=(heightDeBoxes*massiveSize+4)+"px";
-					document.getElementById("blockCenter").style.width=(imageWidth*2+68)+"px";
+					document.getElementById("blockCenter").style.width=(imageWidth*2+58)+"px";
 					document.getElementById("division").style.height=(imageHeight+4)+"px";
-                    
-					
+
 					fillingByBoxes(widthDeBoxes, heightDeBoxes);
                 }; 
             };
@@ -211,7 +222,7 @@ function verifierPuzzle(){
 			}
 		}
 		if (result) {
-			alert("Mes f�licitations");
+			alert("Mes félicitations");
 		} else{
 			alert ("Malheureusement, pas correctement");
 		}
