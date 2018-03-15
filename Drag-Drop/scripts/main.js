@@ -75,7 +75,7 @@ function Upload() {
 					var height = this.height;
                     var width = this.width;
                     var aspectRatio=width/height;
-                    if (aspectRatio<1){
+                    if (aspectRatio<=1){
                         imageHeight=heightBase-4;
                         imageWidth=imageHeight*aspectRatio;
                     } else {
